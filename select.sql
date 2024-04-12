@@ -136,3 +136,70 @@ SELECT * FROM students WHERE email IS NOT NULL;
 
 --  select the students with email address is null and country is 'USA'
 SELECT * FROM students WHERE email IS NULL AND country = 'USA';
+
+--  select the students email address and set email to 'no email' where email is null
+SELECT  COALESCE(email, 'no email') as email FROM students;
+-- alternatively
+SELECT  CASE WHEN email IS NULL THEN 'no email' ELSE email END as email FROM students;
+
+-- select the students with country is 'USA' or 'UK' or 'Canada'
+SELECT * FROM students WHERE country IN ('USA', 'UK', 'Canada');
+
+-- select the students with country is not 'USA' or 'UK' or 'Canada'
+SELECT * FROM students WHERE country NOT IN ('USA', 'UK', 'Canada');
+
+-- select the students with age between 20 and 25
+SELECT * FROM students WHERE age BETWEEN 20 AND 25;
+
+-- select the students with age not between 20 and 25
+SELECT * FROM students WHERE age NOT BETWEEN 20 AND 25;
+
+
+-- select the students with age greater than 20 and less than 25
+SELECT * FROM students WHERE age > 20 AND age < 25;
+
+-- select the students with age less than 20 or greater than 25
+SELECT * FROM students WHERE age < 20 OR age > 25;
+
+-- select the students with dob is '1990-01-01' or '1991-01-01'
+SELECT * FROM students WHERE dob IN ('1990-01-01', '1991-01-01');
+
+-- select the students with dob is not '1990-01-01' or '1991-01-01'
+SELECT * FROM students WHERE dob NOT IN ('1990-01-01', '1991-01-01');
+
+-- select the students with dob is greater than '1990-01-01'
+SELECT * FROM students WHERE dob > '1990-01-01';
+
+
+-- select the students with dob is less than '1990-01-01'
+SELECT * FROM students WHERE dob < '1990-01-01';
+
+-- select the students with dob is greater than or equal to '1990-01-01'
+SELECT * FROM students WHERE dob >= '1990-01-01';
+
+-- select the students with dob is less than or equal to '1990-01-01'
+SELECT * FROM students WHERE dob <= '1990-01-01';
+
+-- select the students with dob is not equal to '1990-01-01'
+SELECT * FROM students WHERE dob != '1990-01-01';
+
+-- select the students with dob is not equal to '1990-01-01'
+SELECT * FROM students WHERE dob <> '1990-01-01';
+
+-- select the students with dob is not equal to '1990-01-01' and country is not 'USA'
+SELECT * FROM students WHERE dob != '1990-01-01' AND country != 'USA';
+
+-- select the students with dob between '1990-01-01' and '1995-01-01'
+SELECT * FROM students WHERE dob BETWEEN '1990-01-01' AND '1995-01-01' ORDER BY dob;
+
+-- limit and offset
+-- limit 5 (fetch first 5 rows)
+SELECT * FROM students LIMIT 5;
+-- limit 5 offset 5 (skip first 5 rows and fetch next 5 rows)
+SELECT * FROM students LIMIT 5 OFFSET 5;
+
+-- limit 5 offset 5 and pagination
+SELECT * FROM students LIMIT 5 OFFSET 5 * 0; -- page 1
+SELECT * FROM students LIMIT 5 OFFSET 5 * 1; -- page 2
+SELECT * FROM students LIMIT 5 OFFSET 5 * 2; -- page 3
+SELECT * FROM students LIMIT 5 OFFSET 5 * 3; -- page 4
