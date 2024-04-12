@@ -6,7 +6,7 @@ ALTER TABLE user2
 ADD COLUMN email TEXT NOT NULL DEFAULT 'gour@gmail.com';
 
 -- insert data
-INSERT INTO user2 (id,user_name, age, email) VALUES (4,'Gour', 23, 'test@gmail.com');
+INSERT INTO user2 (id, user_name, user_age, email) VALUES (2,'Gour2', 24, 'test@gmail.com');
 
 -- changing column name
 ALTER TABLE user2
