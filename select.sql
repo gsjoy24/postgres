@@ -104,3 +104,35 @@ SELECT first_name, last_name FROM students WHERE first_name LIKE 'J%e';
 SELECT first_name || ' ' || last_name as "full name" FROM students;
 -- alrenatively
 SELECT CONCAT(first_name, ' ', last_name) as "full name" FROM students;
+
+-- see average age of students
+SELECT AVG(age) as "average age" FROM students;
+-- see maximum age of students
+SELECT MAX(age) as "maximum age" FROM students;
+
+-- see minimum age of students
+SELECT MIN(age) as "minimum age" FROM students;
+
+-- see sum of ages of students
+SELECT SUM(age) as "sum of ages" FROM students;
+
+-- see count of students
+SELECT COUNT(*) as "number of students" FROM students;
+
+-- see count of students whose blood_group is 'O+'
+SELECT COUNT(*) as "number of students" FROM students WHERE blood_group = 'O+';
+
+-- see count of students whose blood_group is 'O+' and country is 'USA'
+SELECT COUNT(*) as "number of students" FROM students WHERE blood_group = 'O+' AND country = 'USA';
+
+-- see the max length of first_name
+SELECT MAX(LENGTH(first_name)) as "max length of first_name" FROM students;
+
+--  select the students with email address is null
+SELECT * FROM students WHERE email IS NULL;
+
+--  select the students with email address is not null
+SELECT * FROM students WHERE email IS NOT NULL;
+
+--  select the students with email address is null and country is 'USA'
+SELECT * FROM students WHERE email IS NULL AND country = 'USA';
