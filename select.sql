@@ -45,3 +45,62 @@ SELECT DISTINCT country FROM students;
 
 -- selecting blood_group column from students table and removing duplicate values
 SELECT DISTINCT blood_group FROM students;
+
+-- selecting students whose blood_group is 'O+'
+SELECT * FROM students WHERE blood_group = 'O+';
+
+-- selecting students whose blood_group is 'O+' and country is 'USA'
+SELECT * FROM students WHERE blood_group = 'O+' AND country = 'USA';
+
+-- selecting students whose blood_group is 'O+' or country is 'USA'
+SELECT * FROM students WHERE blood_group = 'O+' OR country = 'USA';
+
+-- selecting students whose blood_group is not 'O+'
+SELECT * FROM students WHERE blood_group != 'O+';
+
+-- selecting students whose blood_group is not 'O+' and country is not 'USA'
+SELECT * FROM students WHERE blood_group != 'O+' AND country != 'USA';
+
+-- selecting students whose blood_group is not 'O+' or country is not 'USA'
+SELECT * FROM students WHERE blood_group != 'O+' OR country != 'USA';
+
+-- selecting students whose blood_group is 'O+' and age is greater than 20
+SELECT * FROM students WHERE blood_group = 'O+' AND age > 20;
+
+-- selecting students names in uppercase 
+SELECT UPPER(first_name) as "student name" FROM students;
+
+-- selecting students names in lowercase
+SELECT LOWER(first_name) as "student name" FROM students;
+
+-- selecting students names in title case
+SELECT INITCAP(first_name) as "student name" FROM students;
+
+-- selecting students names with length greater than 4
+SELECT first_name as "student name" FROM students WHERE LENGTH(first_name) > 4;
+
+-- selecting students names with length less than 4
+SELECT first_name as "student name" FROM students WHERE LENGTH(first_name) < 4;
+
+-- selecting students names with length equal to 4
+SELECT first_name as "student name" FROM students WHERE LENGTH(first_name) = 4;
+
+-- selecting students names with length greater than 4 and less than 6  
+SELECT first_name as "student name" FROM students WHERE LENGTH(first_name) > 4 AND LENGTH(first_name) < 6;
+
+-- selecting firs_name and last_name columns from students table where first_name starts with 'J'
+SELECT first_name, last_name FROM students WHERE first_name LIKE 'J%';
+
+-- selecting firs_name and last_name columns from students table where first_name ends with 'e'
+SELECT first_name, last_name FROM students WHERE first_name LIKE '%e';
+
+-- selecting firs_name and last_name columns from students table where first_name contains 'a'
+SELECT first_name, last_name FROM students WHERE first_name LIKE '%a%';
+
+-- selecting firs_name and last_name columns from students table where first_name starts with 'J' and ends with 'e'
+SELECT first_name, last_name FROM students WHERE first_name LIKE 'J%e';
+
+-- selecting first name and last and concatenating them with space in between
+SELECT first_name || ' ' || last_name as "full name" FROM students;
+-- alrenatively
+SELECT CONCAT(first_name, ' ', last_name) as "full name" FROM students;
