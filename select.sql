@@ -39,3 +39,9 @@ SELECT first_name as "student name", last_name as "student surname" FROM student
 
 -- selecting and sorting all column in descending order
 SELECT * FROM students ORDER BY first_name DESC;
+
+-- selecting country column from students table and removing duplicate values
+SELECT DISTINCT country FROM students;
+
+-- selecting blood_group column from students table and removing duplicate values
+SELECT DISTINCT blood_group FROM students;
