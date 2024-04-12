@@ -31,3 +31,9 @@ ALTER TABLE user2
 -- removing unique constraint to user_age
 ALTER TABLE user2
    DROP CONSTRAINT unique_user2_user_age;
+
+   -- dropping table | it will remove the whole table with all data.
+DROP TABLE user2;
+
+-- dropping table data | it will remove all data from the table but table will be there.
+TRUNCATE TABLE user2;
