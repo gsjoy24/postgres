@@ -12,7 +12,7 @@ CREATE Table students (
    country VARCHAR(50)
 );
 
-SELECT * FROM students;
+SELECT age FROM students;
 
 INSERT INTO students (first_name, last_name, age, grade, course, email, dob, blood_group, country) 
 VALUES ('John', 'Doe', 20, 'A', 'Mathematics', 'john@gmail.com', '2000-01-01', 'O+', 'USA'),('Jane', 'Doe', 21, 'B', 'Physics', 'jane@gmail.com', '1999-01-01', 'A+', 'UK'),
@@ -30,3 +30,12 @@ VALUES ('John', 'Doe', 20, 'A', 'Mathematics', 'john@gmail.com', '2000-01-01', '
 ('Lily', 'Blue', 33, 'N', 'Literature', 'lily@gmail.com', '1987-01-01', 'A-', 'Peru'),
 ('Mike', 'Brown', 34, 'O', 'Philosophy', 'mike@gmail.com', '1986-01-01', 'B-', 'Colombia'),
 ('Nancy', 'Green', 35, 'P', 'Theology', 'nancy@gmail.com', '1985-01-01', 'AB-', 'Venezuela')
+
+-- selecting email column from students table with alias "student email"
+SELECT email as "student email" FROM students;
+
+-- selecting first_name and last_name columns from students table with alias "student name"
+SELECT first_name as "student name", last_name as "student surname" FROM students;
+
+-- selecting and sorting all column in descending order
+SELECT * FROM students ORDER BY first_name DESC;
